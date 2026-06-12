@@ -1,0 +1,56 @@
+- see 📸 image-01-real-life-analalogy-for-redis.png
+- redis is in-memory database (its an opinion)
+- reading from hard disk (even if its SSD) takes more time than reading from RAM
+- redis also provides feature for persistent data
+- redis is in-memory database store
+- redis loads state into RAM (hence its fast or lightening fast)
+
+- see 📸 image-02-redis-in-an-application.png
+- there are many strategies to place redis
+- when user makes a request, the backend applications searches for the requested resource in redis (the in memory db store), if its found there, backend will fetch the resource from there and respond to the user
+- redis is not a replacement for database
+- if the backend doesn't find the requested resource in redis, it will fetch the resource from the database
+- if the requested resource is a hot record (frequently requested resource), then its first stored in the redis and then backend sends it to the user
+- fetching from redis or fetching from database is sure to have some latency
+- nowadays, some databases can store values in memory
+- database is the source of truth
+
+- see 📸 image-03-cache-hit-and-cache-miss.png
+- redis is not the solution for everything
+- case 1 : cache miss
+  - requests need to go to database
+  - database won't respond directly
+  - it will respond to redis
+  - then redis will respond to the backend
+  - so, all requests first go to redis by default
+- case 2 : cache hit
+  - requests won't go to database
+  - cached data is sometimes called 'fast'
+- cache miss is comparatively slow (than cache hit)
+- so redis helped to reduce read pressure
+- write operations must go to database
+- hot data is stored in redis
+- real life example : swiggy and zomato take the city related menu/restaurant data from cache
+
+- see 📸 image-04-two-aspects-of-redis.png
+- we discussed the cache aspect of redis
+- redis also provides 'session store'
+- we can store sessions of users on redis
+
+- see 📸 image-05-redis-for-OTPs.png
+- OTPs are valid for short period of time, so for that short period of time we'll store the OTP in redis
+- TTL stands for time-to-leave
+- after TTL, the record is cleared/removed
+
+- see 📸 image-06-redis-for-rate-limiting.png
+- we can have IP based records
+- 'count' for counting the number of requests made by a particular user
+- 'cooldown' will be a boolean value
+
+- see 📸 image-07-redis-for-job-queues.png
+- redis can maintain queue (or list)
+- one or more workers might be working on the tasks in the queue
+- example : for sending emails, we can make many batches of 10 emails to be sent, a worker (from a set of workers) will come, take a batch and email 10 people
+- worker is nothing but a small application meant just for doing a specific job
+
+⏸️ resume from 21:00

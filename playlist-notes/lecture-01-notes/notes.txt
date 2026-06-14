@@ -7,7 +7,7 @@
 
 - see 📸 image-02-redis-in-an-application.png
 - there are many strategies to place redis
-- when user makes a request, the backend applications searches for the requested resource in redis (the in memory db store), if its found there, backend will fetch the resource from there and respond to the user
+- when user makes a request, the backend application searches for the requested resource in redis (the in memory db store), if its found there, backend will fetch the resource from there and respond to the user
 - redis is not a replacement for database
 - if the backend doesn't find the requested resource in redis, it will fetch the resource from the database
 - if the requested resource is a hot record (frequently requested resource), then its first stored in the redis and then backend sends it to the user
@@ -39,7 +39,7 @@
 
 - see 📸 image-05-redis-for-OTPs.png
 - OTPs are valid for short period of time, so for that short period of time we'll store the OTP in redis
-- TTL stands for time-to-leave
+- TTL stands for time-to-live
 - after TTL, the record is cleared/removed
 
 - see 📸 image-06-redis-for-rate-limiting.png
@@ -48,9 +48,24 @@
 - 'cooldown' will be a boolean value
 
 - see 📸 image-07-redis-for-job-queues.png
-- redis can maintain queue (or list)
+- redis can maintain queues (or lists)
 - one or more workers might be working on the tasks in the queue
 - example : for sending emails, we can make many batches of 10 emails to be sent, a worker (from a set of workers) will come, take a batch and email 10 people
 - worker is nothing but a small application meant just for doing a specific job
 
-⏸️ resume from 21:00
+- see 📸 image-08-key-value-pairs-in-redis.png
+- the most common way to store data in redis is key value pairs
+- redis -> read only dictionaries
+- a way to store session related data using redis : have "session" key with the session data as value for active sessions & don't keep "session" at all for inactive sessions
+- TTL -> time to live
+- key-value pairs should be easy to understand, avoid collisions
+- see 📸 image-09-invalidation-and-auto-deletion.png
+- invalidation / auto-deletion is built-in in redis (its a feature)
+
+- redis is not a solution to every problem
+- we need to understand the problem well first
+- check guideline regarding whether to use redis or not
+  - do we want to reduce read pressure?
+  - do we need to store temporary data (data that gets expired after some time)
+  - do we need to store shared counter (like number of page views, likes, requests made (for rate limiting))
+  - do we need to handle background jobs or queues (like queues of emails, notifications, report generation)

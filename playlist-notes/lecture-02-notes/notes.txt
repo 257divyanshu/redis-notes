@@ -1,0 +1,18 @@
+- our choice of memory databases (likes mongoDB, mySQL, postgreSQL) has nothing to do with redis
+
+- write the docker-compose.yml file and then run "docker compose" command in terminal opened at "setup-local-redis" folder
+
+- inside the "setup-local-redis" folder
+    - make "src" folder
+      - make "index.js" inside it
+    - make "README.md" file
+    - make "package.json" file
+
+- run "npm i" to install the dependencies listed in the package.json file
+- "ioredis" is one of the most famous packages to talk to redis (in javascript ecosystem)
+
+📍 "inside index.js"
+- we need to make a redis client
+- using redis://localhost:6379 we can connect to the what we started using the "docker compose" command
+- now we want to ping to redis
+- after writing the index.js script, run "npm run dev" and test the endpoints http://localhost:3000/redis and http://localhost:3000/mongo

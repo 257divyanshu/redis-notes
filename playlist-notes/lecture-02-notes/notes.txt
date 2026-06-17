@@ -1,6 +1,14 @@
-- our choice of memory databases (likes mongoDB, mySQL, postgreSQL) has nothing to do with redis
+- Redis is independent of our primary database choice.
+- Whether our application uses:
+  - MongoDB
+  - PostgreSQL
+  - MySQL
+  - MariaDB
+  - Oracle
+  - SQL Server
+  - we can still place Redis alongside it.
 
-- write the docker-compose.yml file and then run "docker compose" command in terminal opened at "setup-local-redis" folder
+- write the docker-compose.yml file and then run "docker compose up" command in terminal opened at "setup-local-redis" folder
 
 - inside the "setup-local-redis" folder
     - make "src" folder

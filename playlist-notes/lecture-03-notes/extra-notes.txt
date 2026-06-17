@@ -1,0 +1,6 @@
+📍 app.use(express.json())
+- a middleware registration
+- that:
+  (i) reads incoming request bodies with JSON data
+  (ii) parses the JSON string into JavaScript object
+  (iii) stores the result in req.body

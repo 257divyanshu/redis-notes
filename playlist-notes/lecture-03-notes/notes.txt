@@ -1,0 +1,9 @@
+- banners or pop-up bars that show discounts, message, warnings etc are also known as hello bars
+- its not preferred to serve them from database
+- yes, the information contained in those hello bars is stored in database, but they are served from the redis layer
+- those hello bars are shown to every user, so it doesn't make sense to server them from database, better serve them from redis
+- hello bars can be made static too (no issues with that)
+- usually the information regarding those hello bars is updated through database panel
+
+- work on index.js file
+- test the endpoints

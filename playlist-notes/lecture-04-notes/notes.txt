@@ -1,0 +1,5 @@
+- TTL (time to live) is a superpower of Redis
+
+- the key-value pairs in Redis can have json object as values
+
+⏸️ 11:07

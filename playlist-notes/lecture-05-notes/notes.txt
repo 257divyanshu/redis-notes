@@ -1,0 +1,24 @@
+- user profile can be stored in redis
+
+- we want to keep user profile in cache
+- there are two ways to keep user profile in redis:
+  - (i) json
+  - (ii) hash
+
+- redis SET command is used to store single variable
+- redis hset command is used to store object
+
+- through SET command, values can't be updated, they get replaced completely
+- but when we are storing object, we might want to update them
+
+- redis hgetall command is used to get entire object
+
+- head to 📁 src/index.js
+
+- some more methods:
+  - hget : for getting a particular field
+  - hdel : for deleting
+  - hexists : for existence check
+
+- so caching user profile in hash is better
+- it allows us to update single fields, increment ore decrement a particular field's value

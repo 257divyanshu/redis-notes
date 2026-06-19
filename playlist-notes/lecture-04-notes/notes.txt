@@ -2,4 +2,4 @@
 
 - the key-value pairs in Redis can have json object as values
 
-⏸️ 11:07
+- Redis can automatically delete temporary data using TTL (Time To Live), making it ideal for OTPs, verification codes, password reset tokens, temporary sessions, and rate-limiting counters.

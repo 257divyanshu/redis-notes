@@ -1,0 +1,16 @@
+- redis can also be used as a queue
+- but using redis as a queue has some issues
+
+📍 when using redis lists as queue:
+  - entry will be from left
+  - pop will be from right
+- we need to do these things manually
+- but, there are libraries that get this word done for us
+
+📍 issues with using redis lists as queues:
+- Job Loss: Risk of losing data if the worker fails after popping the job
+- No Retry Mechanism: Lack of a system to handle failed jobs automatically
+- Lack of Parallel Workers: The manual implementation we did, does not inherently support scaling to multiple background workers for processing
+
+📍 note
+- I tried stopping the running container and starting it contain, data of redis list used as queue seems to persist even after that stop and restart, how?

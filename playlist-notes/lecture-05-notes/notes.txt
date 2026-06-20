@@ -9,7 +9,7 @@
 - redis hset command is used to store object
 
 - through SET command, values can't be updated, they get replaced completely
-- but when we are storing object, we might want to update them
+- but when we are storing objects, we might want to update them
 
 - redis hgetall command is used to get entire object
 
@@ -21,4 +21,6 @@
   - hexists : for existence check
 
 - so caching user profile in hash is better
-- it allows us to update single fields, increment ore decrement a particular field's value
+- it allows us to update single field, increment or decrement a particular field's value
+
+- Redis is not just a key-value cache. It supports multiple data structures, and Hashes are often a better fit than storing JSON strings.

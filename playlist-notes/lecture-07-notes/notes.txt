@@ -1,0 +1,12 @@
+- bull mq uses redis behind the scenes
+
+- producer consumer model
+  - producer : generates/sends tasks
+  - consumer : processes/consumes those tasks
+
+- tasks or jobs are kept in queues
+
+- for a basic queue infrastructure, we'll need a minimum of three files:
+  - queue.js : for creating a shared queue
+  - api.js : the producer
+  - worker.js : the consumer

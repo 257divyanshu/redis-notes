@@ -1,0 +1,21 @@
+- publisher can be an app or a service or a worker
+
+- redis is like an intermediatory between publisher and subscriber
+- in redis, we need to make channel(s)
+
+- there can be many subscribers
+
+- types of subscribers:
+  - active
+  - inactive
+
+- the publisher publishes stuff on channels
+- the stuff's configuration contains:
+  - the name of the channel on which the stuff needs to be published
+  - message to be published
+
+- so from our end, we only need to publish stuff on channels
+
+- subscribers actively listen to the channels
+- subscribers receive something called "delivery updates" from channels
+- inactive subscribers do not get the updates of the channels

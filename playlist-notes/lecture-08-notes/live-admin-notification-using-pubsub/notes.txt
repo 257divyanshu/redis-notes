@@ -1,0 +1,8 @@
+- we'll have two files:
+  - api.js
+  - subscriber.js
+
+- we don't need a separate file for publisher
+- as soon as our api receives a request, it will do the publishing work
+
+- but, in some cases separate publishers as used

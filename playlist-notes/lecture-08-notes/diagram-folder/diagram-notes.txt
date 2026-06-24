@@ -12,7 +12,7 @@
 - the publisher publishes stuff on channels
 - the stuff's configuration contains:
   - the name of the channel on which the stuff needs to be published
-  - message to be published
+  - message/content to be published
 
 - so from our end, we only need to publish stuff on channels
 

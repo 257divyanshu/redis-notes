@@ -1,0 +1,22 @@
+- project name : LIVE LEADERBOARD
+
+- study about : 
+  - incr (increment)
+  - zincrby (z increment by)
+  - zrevrange (z reverse range)
+  - zrevrank (z reverse rank)
+
+- dive deep into "the use of Redis in incrementing"
+
+- for incrementing, in a regular database:
+  - we need to first select
+  - we need to acquire a lock
+  - we need to use transaction property
+  - we need to update
+- but, in Redis, all these tasks are handled behind the scenes just by one command "incr"
+
+📍 endpoints:
+- POST -> /post:id/view -> increment viewcount of a post (we'll use the redis "incr" command to increase the viewcount of a particular post)
+- POST -> /leaderboard/score -> add points to a user's score (we'll take userId and points from the body)
+- GET -> /leaderboard -> get top 10 leaders (we'll use redis 'zrevrange' command, we don't need to write a query involving SELECT, FILTER, SORT, ARRANGE BY)
+- GET -> /leaderboard/:userId/rank -> get the rank of a particular user (we'll use redis 'zrevrank' command here)
